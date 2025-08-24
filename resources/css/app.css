@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+    --font-apple: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol";
+}
+
+@layer components {
+    .panel input {
+        @apply border rounded-lg;
+    }
+
+    .btn-primary {
+        @apply text-sm bg-blue-400 hover:bg-blue-500 text-white font-bold p-2 rounded-lg;
+    }
+    .btn-danger {
+        @apply text-sm bg-red-400 hover:bg-red-500 text-white font-bold p-2 rounded-lg;
+    }
+
+    .body {
+        @apply flex justify-center items-center bg-blue-200;
+    }
+
+    .window * {
+        @apply font-apple;
+    }
+    .window {
+        @apply w-1/2 bg-gray-100 rounded-lg border border-gray-400 mt-10;
+    }
+    .window header {
+        @apply w-full h-10 bg-gray-200 border-b-1 border-gray-400 rounded-t-lg flex items-center shadow-[0_-6px_3px_0_rgba(0,0,0,0.05)_inset];
+    }
+    .window header > div {
+        @apply flex items-center gap-3 pl-2;
+    }
+    .window header h1 {
+        @apply text-center ml-[30%] font-bold;
+    }
+    .window .ball {
+        @apply w-4 h-4 bg-gray-700 rounded-full;
+    }
+    .window main {
+        @apply bg-white rounded-b-lg rounded-t-none flex flex-col items-center p-3;
+    }
+
+    .list-container {
+        @apply w-3/4;
+    }
+    .list {
+        @apply w-full p-2 flex flex-col gap-3;
+    }
+    .list li {
+        @apply flex justify-between items-center hover:bg-gray-200 border border-gray-200 p-2 rounded-lg transition-colors;
+    }
+}
